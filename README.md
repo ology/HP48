@@ -9,6 +9,6 @@ in the Stone Age before the Interwebs.
 
 *MIKE* is an attempt at this repetative grammar of my friend Mike Robert Avery.
 
-*TRIP* is a handy auto trip calculator I (made and) used for years.
+*TRIP* is a handy auto trip calculator I made and used for years.
 
- -- gene + HP48 at ology ... net
+ -- gene at ology dot net
