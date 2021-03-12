@@ -11,4 +11,4 @@ in the Stone Age before the Interwebs.
 
 *TRIP* is a handy auto trip calculator I made and used for years.
 
- -- gene at ology dot net
+Sadly, these programs were made before I understood the importance of documentation. :\
