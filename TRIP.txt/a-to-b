@@ -1,0 +1,11 @@
+%%HP: T(1)A(D)F(.);
+´
+"What is your origin?"
+{ å } TO 1 GET +
+INPUT
+"What is your
+destination?"
+{ å } TO 2 GET +
+INPUT 2 çLIST 'TO'
+STO
+ª

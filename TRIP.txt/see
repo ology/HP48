@@ -1,0 +1,43 @@
+%%HP: T(1)A(D)F(.);
+´ 2 FIX ERASE PICT
+RCL { # 0d # 2d }
+"TRIP SUMMARY:"
+STçPICT { # 0d
+# 14d }
+"distance: " DIST
+NçST + STçPICT {
+# 0d # 20d }
+"time: " DIST RATE
+/ UVAL '1_h' çUNIT
+NçST + STçPICT {
+# 0d # 26d }
+"mph: " RATE NçST +
+STçPICT { # 0d
+# 32d } "mpg: " MPG
+NçST + STçPICT {
+# 0d # 38d }
+"gas: " GAS NçST +
+STçPICT { # 0d
+# 44d } "refuel "
+REFUEL + " times" +
+STçPICT { # 0d
+# 50d }
+"gas price: $ "
+GAS$ UVAL + STçPICT
+{ # 0d # 56d }
+"cost+toll: $ "
+COST + STçPICT {
+# 79d # 20d } TO 1
+GET STçPICT { # 84d
+# 26d } "TO"
+STçPICT { # 79d
+# 32d } TO 2 GET
+STçPICT { # 79d
+# 44d } "ETA:-"
+STçPICT { # 82d
+# 50d } ETAST 1 12
+SUB STçPICT { # 82d
+# 56d } ETAST 14 22
+SUB STçPICT PICT
+STO DONE SEEP STD
+ª

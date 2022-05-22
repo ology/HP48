@@ -1,0 +1,10 @@
+%%HP: T(1)A(D)F(.);
+´ STARTT OBJç DROP
+HMSç DIST RATE /
+UVAL
+  IF DUP 3 INV * 1
+ä
+  THEN DUP 3 INV *
++
+  END + çHMS
+ª

@@ -1,0 +1,9 @@
+%%HP: T(1)A(D)F(.);
+´
+"Enter the new
+distance:"
+{ "_mi" 1 } INPUT
+OBJç 'DIST' STO
+DATE TIME 2 çLIST
+'STARTT' STO SEE
+ª

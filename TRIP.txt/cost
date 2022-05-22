@@ -1,0 +1,6 @@
+%%HP: T(1)A(D)F(.);
+« GAS GAS$ * DIST
+RATE / '1_d'
+CONVERT 3 / EAT$ *
++ ¿$? + 2 RND
+»

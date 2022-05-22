@@ -1,0 +1,7 @@
+%%HP: T(1)A(D)F(.);
+« ETA
+  IF DUP 24 Š
+  THEN 24 - SWAP 1
+DATE+ SWAP
+  END TSTR
+»

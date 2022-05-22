@@ -1,0 +1,11 @@
+%%HP: T(1)A(D)F(.);
+´ ERASE 1 XCOL 2
+YCOL SCATRPLOT PICT
+{ # 0d # 0d }
+"EFFICENCY:" 1
+çGROB GOR PICT {
+# 0d # 8d }
+"MPH◊MPG" 1 çGROB
+GOR { # 0d # 0d }
+PVIEW 0 WAIT DROP
+ª

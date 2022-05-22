@@ -1,0 +1,7 @@
+%%HP: T(1)A(D)F(.);
+´ OBJç UPDIR DROP
+'STARTT' STO 'GAS$'
+STO 'MPG' STO
+'RATE' STO 'DIST'
+STO 'TO' STO SEE
+ª

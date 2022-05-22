@@ -1,0 +1,9 @@
+%%HP: T(1)A(D)F(.);
+´ TO DIST RATE MPG
+GAS$ STARTT 6 çLIST
+JOURN
+"Name this trip:" {
+ALG å "''" 2 }
+INPUT OBJç STO
+UPDIR
+ª

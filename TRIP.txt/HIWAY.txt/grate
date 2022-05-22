@@ -1,0 +1,7 @@
+%%HP: T(1)A(D)F(.);
+«
+"Enter the miles
+from the odometer:"
+{ "_mi" 1 } INPUT
+OBJ
+»

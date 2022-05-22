@@ -1,0 +1,7 @@
+%%HP: T(1)A(D)F(.);
+´ TO OBJç DROP SWAP
+2 çLIST 'TO' STO
+"Origin & destination
+have been switched."
+1 DISP 3 FREEZE
+ª

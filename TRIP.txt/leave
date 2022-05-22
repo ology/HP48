@@ -1,0 +1,10 @@
+%%HP: T(1)A(D)F(.);
+´
+"What date will you
+start? (eg. 10.311991)"
+"" INPUT OBJç
+"At what time will you
+start? (EG. 14.0549)"
+"" INPUT OBJç 2
+çLIST 'STARTT' STO
+ª
