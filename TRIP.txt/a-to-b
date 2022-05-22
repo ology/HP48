@@ -9,3 +9,7 @@ destination?"
 INPUT 2 çLIST 'TO'
 STO
 ª
+
+__END__
+
+This variable is actually named 'a<right-arrow>b' on the calculator.
