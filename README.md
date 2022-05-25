@@ -13,3 +13,5 @@ in the Stone Age before the Interwebs.
 
 Unfortunately, these programs were made before I understood the importance of documentation.
 But fortunately, they are being resurrected!
+
+`*.txt` things are readable source code.
