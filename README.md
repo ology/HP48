@@ -15,3 +15,5 @@ Unfortunately, these programs were made before I understood the importance of do
 But fortunately, they are being resurrected!
 
 `*.txt` things are readable source code.
+
+Please check out the write-up: https://ology.github.io/2022/05/25/hp48g-ressurection/
