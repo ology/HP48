@@ -1,5 +1,13 @@
 %%HP: T(1)A(D)F(.);
 DIR
+  UNITS
+    ´ { '1_gal' '1_
+1/gal' '1_mi' '1_1/
+mi' '1_km' '1_1/km'
+'1_d' '1_1/d' '1_h'
+'1_1/h' '1_mi/h' '1
+_km/h' } TMENU
+    ª
   JOURN
     DIR
       TEST { {
@@ -19,62 +27,7 @@ STO 'TO' STO
 SUMMARY
         ª
     END
-  HIWAY
-    DIR
-      GALS '13_gal'
-      ODOM GDIST
-      ÖDAT
-[[ 0 0 ]]
-      ÖPAR { 1 2 0
-0 LINFIT }
-      PPAR {
-(-1,-1.3) (1,1)
-RATE 0 (0,0)
-SCATTER Y }
-      BEGIN
-        ´ TIME
-'START.' STO
-        ª
-      DONE
-        ´ ODOM
-GDIST DUP 'ODOM'
-STO SWAP - UVAL
-TIME HMSç START.
-HMSç - / '1_mph'
-çUNIT
-        ª
-      ADDE
-        ´ ERASE 1
-XCOL 2 YCOL
-SCATRPLOT PICT {
-# 0d # 0d }
-"EFFICENCY:" 1
-çGROB GOR PICT {
-# 0d # 8d }
-"MPH◊MPG" 1 çGROB
-GOR { # 0d # 0d }
-PVIEW 0 WAIT DROP
-        ª
-      GFUEL
-        ´ GRATE
-UVAL DUP GALS /
-GFUEL 'GALS' STO
-UVAL çV2 Ö+
-        ª
-      GRATE
-        ´
-"Enter the miles
-from the odometer:"
-{ "_mi" 1 } INPUT
-OBJç
-        ª
-      START.
-5.12059564208
-      CST { BEGIN
-ADDE EFFIC "" '1_
-gal' '1_mi' }
-    END
-  DIST '100_mi'
+  DIST '1000_mi'
   RATE '10_mi/h'
   MPG '10_mi/gal'
   TANK '10_gal'
@@ -85,13 +38,6 @@ gal' '1_mi' }
   DAYS
     ´ DIST RATE /
 DRIVE / çHMS IP
-    ª
-  ETA
-    ´ STARTT 1 GET
-DAYS DATE+ STARTT 2
-GET DIST RATE /
-DRIVE DAYS * - UVAL
-HMS+
     ª
   GAS
     ´ DIST MPG /
@@ -217,11 +163,18 @@ EAT$ MISC$ + DIST
 RATE / '1_d'
 CONVERT * + 2 RND
     ª
-  UNITS
-    ´ { '1_gal' '1_
-mi' '1_mi/h' '1_d'
-'1_h' '1_min' }
-TMENU
+  ETA
+    ´ STARTT 1 GET
+DAYS DATE+ STARTT 2
+GET DIST RATE /
+DRIVE DAYS * - UVAL
+HMS+
+      IF DIST RATE
+/ DRIVE / FP 0 ==
+      THEN DRIVE
+UVAL çHMS HMS+ SWAP
+-1 DATE+ SWAP
+      END
     ª
   T2F
     ´ TO OBJç DROP
@@ -274,8 +227,7 @@ SWAP 1 DATE+ SWAP
   PPAR { (-2,-2)
 (2,2) RATE 0 (0,0)
 SCATTER Y }
-  CST { APP "" ""
-"" SAVE JOURN UNITS
-"" TO$ EXPN ""
-HIWAY }
+  CST { APP SEEP ""
+UNITS SAVE JOURN
+TO$ EXPN }
 END
