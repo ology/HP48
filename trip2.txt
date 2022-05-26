@@ -1,0 +1,281 @@
+%%HP: T(1)A(D)F(.);
+DIR
+  JOURN
+    DIR
+      TEST { {
+"BEND" "PORTLAND" }
+'1000_mi' '50_mi/h'
+'10_mi/gal' '1_1/
+gal' '10_1/d' '0_1/
+d' { 5.252022 8 } }
+      REPLACE
+        ´ OBJç
+UPDIR DROP 'STARTT'
+STO 'GAS$' STO
+'EAT$' STO 'MISC$'
+STO 'MPG' STO
+'RATE' STO 'DIST'
+STO 'TO' STO
+SUMMARY
+        ª
+    END
+  HIWAY
+    DIR
+      GALS '13_gal'
+      ODOM GDIST
+      ÖDAT
+[[ 0 0 ]]
+      ÖPAR { 1 2 0
+0 LINFIT }
+      PPAR {
+(-1,-1.3) (1,1)
+RATE 0 (0,0)
+SCATTER Y }
+      BEGIN
+        ´ TIME
+'START.' STO
+        ª
+      DONE
+        ´ ODOM
+GDIST DUP 'ODOM'
+STO SWAP - UVAL
+TIME HMSç START.
+HMSç - / '1_mph'
+çUNIT
+        ª
+      ADDE
+        ´ ERASE 1
+XCOL 2 YCOL
+SCATRPLOT PICT {
+# 0d # 0d }
+"EFFICENCY:" 1
+çGROB GOR PICT {
+# 0d # 8d }
+"MPH◊MPG" 1 çGROB
+GOR { # 0d # 0d }
+PVIEW 0 WAIT DROP
+        ª
+      GFUEL
+        ´ GRATE
+UVAL DUP GALS /
+GFUEL 'GALS' STO
+UVAL çV2 Ö+
+        ª
+      GRATE
+        ´
+"Enter the miles
+from the odometer:"
+{ "_mi" 1 } INPUT
+OBJç
+        ª
+      START.
+5.12059564208
+      CST { BEGIN
+ADDE EFFIC "" '1_
+gal' '1_mi' }
+    END
+  DIST '100_mi'
+  RATE '10_mi/h'
+  MPG '10_mi/gal'
+  TANK '10_gal'
+  DRIVE '10_h'
+  GAS$ '1_1/gal'
+  EAT$ '0_1/d'
+  MISC$ '0_1/d'
+  DAYS
+    ´ DIST RATE /
+DRIVE / çHMS IP
+    ª
+  ETA
+    ´ STARTT 1 GET
+DAYS DATE+ STARTT 2
+GET DIST RATE /
+DRIVE DAYS * - UVAL
+HMS+
+    ª
+  GAS
+    ´ DIST MPG /
+    ª
+  REFUEL
+    ´ GAS TANK / 1
+RND
+    ª
+  TO { "BEND"
+"PORTLAND" }
+  STARTT { 1.012023
+8 }
+  APP
+    ´ F2T SET$ SETU
+SUMMARY
+    ª
+  F2T
+    ´ "FROM ç TO" {
+{ "FROM:"
+"FROM ORIGIN" 2 } {
+"TO:"
+"TO DESTINATION" 2
+} { "DATE:"
+"DEPART ON (EX: 12.312022)"
+0 } { "TIME:"
+"DEPART AT (EX: 11.2959)"
+0 } } { 1 4 } { }
+TO OBJç DROP STARTT
+OBJç DROP 4 çLIST
+      IF INFORM
+      THEN OBJç
+DROP 2 çLIST
+'STARTT' STO 2
+çLIST 'TO' STO
+      END
+    ª
+  SET$
+    ´
+"$ & DRIVE SETUP" {
+{ "GAS:"
+"PRICE PER GALLON"
+} { "EAT:"
+"COST PER DAY" } {
+"MISC:"
+"DAILY MISCELANEOUS COST"
+} { "DRIVE:"
+"DRIVE TIME PER DAY"
+13 } } { 1 4 } { }
+GAS$ EAT$ MISC$
+DRIVE 4 çLIST
+      IF INFORM
+      THEN OBJç
+DROP 'DRIVE' STO
+'MISC$' STO 'EAT$'
+STO 'GAS$' STO
+      END
+    ª
+  SETU
+    ´ "UNITS SETUP"
+{ { "DIST:" "" 13 }
+{ "MPH:" "" 13 } {
+"MPG:" "" 13 } {
+"TANK:" "" 13 } } {
+1 4 } { } DIST RATE
+MPG TANK 4 çLIST
+      IF INFORM
+      THEN OBJç
+DROP 'TANK' STO
+'MPG' STO 'RATE'
+STO 'DIST' STO
+      END
+    ª
+  SUMMARY
+    ´ 2 FIX ERASE {
+# 40d # 0d }
+"TRIP SUMMARY"
+ST2PICT { # 0d # 9d
+} "distance: " DIST
+N2ST + ST2PICT {
+# 0d # 15d }
+"time: " DIST RATE
+/ UVAL '1_h' çUNIT
+N2ST + ST2PICT {
+# 0d # 21d }
+"mph: " RATE N2ST +
+ST2PICT { # 0d
+# 27d } "mpg: " MPG
+N2ST + ST2PICT {
+# 0d # 33d }
+"gas: " GAS N2ST +
+ST2PICT { # 0d
+# 39d } "refuel: "
+REFUEL + " X" +
+ST2PICT { # 0d
+# 45d }
+"gas price: $ "
+GAS$ UVAL + ST2PICT
+{ # 0d # 51d }
+"DAY COST: $ " EAT$
+MISC$ + UVAL +
+ST2PICT { # 0d
+# 59d }
+"TOTAL cost: $ "
+COST + ST2PICT {
+# 75d # 15d } TO 1
+GET ST2PICT { # 81d
+# 21d } STARTST 1
+12 SUB ST2PICT {
+# 81d # 27d }
+STARTST 14 22 SUB
+ST2PICT { # 75d
+# 39d } TO 2 GET
+ST2PICT { # 81d
+# 45d } ETAST 1 12
+SUB ST2PICT { # 81d
+# 51d } ETAST 14 22
+SUB ST2PICT SEEP
+STD
+    ª
+  COST
+    ´ GAS GAS$ *
+EAT$ MISC$ + DIST
+RATE / '1_d'
+CONVERT * + 2 RND
+    ª
+  UNITS
+    ´ { '1_gal' '1_
+mi' '1_mi/h' '1_d'
+'1_h' '1_min' }
+TMENU
+    ª
+  T2F
+    ´ TO OBJç DROP
+SWAP 2 çLIST 'TO'
+STO
+"Origin & destination
+have been switched."
+1 DISP 3 FREEZE
+    ª
+  TO$
+    ´ 'EXPN'
+"Enter the amount of
+money spent:"
+"" INPUT OBJç STO+
+    ª
+  EXPN 372.25
+  SAVE
+    ´ TO DIST RATE
+MPG GAS$ EAT$ MISC$
+STARTT 8 çLIST
+JOURN
+"Name this trip:" {
+ALG å "''" 2 }
+INPUT OBJç STO
+UPDIR
+    ª
+  N2ST
+    ´ "" + DUP SIZE
+1 - 2 SWAP SUB
+    ª
+  ST2PICT
+    ´ PICT 3 ROLLD
+1 çGROB GOR
+    ª
+  STARTST
+    ´ STARTT OBJç
+DROP TSTR
+    ª
+  SEEP
+    ´ { # 0d # 0d }
+PVIEW 0 WAIT DROP
+    ª
+  ETAST
+    ´ ETA
+      IF DUP 24 ä
+      THEN 24 -
+SWAP 1 DATE+ SWAP
+      END TSTR
+    ª
+  PPAR { (-2,-2)
+(2,2) RATE 0 (0,0)
+SCATTER Y }
+  CST { APP "" ""
+"" SAVE JOURN UNITS
+"" TO$ EXPN ""
+HIWAY }
+END
