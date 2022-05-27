@@ -1,0 +1,9 @@
+set port /dev/ttyUSB0
+set speed 9600
+set carrier-watch off
+set modem type direct
+set flow none
+set parity none
+set control prefix all
+set file type binary
+SET SEND PACKET-LENGTH 64
