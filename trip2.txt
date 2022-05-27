@@ -72,6 +72,7 @@ OBJç DROP 4 çLIST
 DROP 2 çLIST
 'STARTT' STO 2
 çLIST 'TO' STO
+      ELSE KILL
       END
     ª
   SET$
@@ -93,6 +94,7 @@ DRIVE 4 çLIST
 DROP 'DRIVE' STO
 'MISC$' STO 'EAT$'
 STO 'GAS$' STO
+      ELSE F2T
       END
     ª
   SETU
@@ -108,6 +110,7 @@ MPG TANK 4 çLIST
 DROP 'TANK' STO
 'MPG' STO 'RATE'
 STO 'DIST' STO
+      ELSE SET$
       END
     ª
   SUMMARY
